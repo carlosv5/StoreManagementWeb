@@ -83,36 +83,27 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-3">¡Rellena aquí tu pedido!</h2>
+            <h2 class="section-title mb-3">¡Revisa tu pedido!</h2>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-7 mb-5">
 
-            <form action="saveOrder" class="p-5 bg-white" method="post">
+            <form action="editOrder" class="p-5 bg-white" method="post">
               
-              <h2 class="h4 text-black mb-5">Quiero:</h2> 
+              <h2 class="h4 text-black mb-5">Pedido: {{title}}</h2> 
 
-              <div class="row form-group">
-                
-                <div class="col-md-12">
-                  <label class="text-black" for="subject">Título del pedido:</label> 
-                  <input type="subject" name="title" id="subject" class="form-control rounded-0">
-                </div>
-              </div>
 
-              <div class="row form-group">
                 <div class="col-md-12">
-                  <label class="text-black" for="message">Elemento</label> 
-                  <textarea name="element" id="message" cols="30" rows="2" class="form-control rounded-0" placeholder="Escribe aquí el elemento que quieres"></textarea>
+					<ol>
+					  <li>{{element}}</li>
+					</ol>
                 </div>
-              </div>
              
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input value="Añadir elemento" class="btn btn-black rounded-0 py-3 px-4">
-                  <input type="submit" value="Guardar pedido" class="btn btn-black rounded-0 py-3 px-4">
+                  <input type="submit" value="Editar pedido" class="btn btn-black rounded-0 py-3 px-4">
                 </div>
               </div>
 
