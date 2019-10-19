@@ -62,7 +62,7 @@
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="#home-section" class="nav-link">Inicio</a></li>
-                <li><a href="/NuevoPedido.html" class="nav-link">Nuevo pedido</a></li>
+                <li><a href="/NuevoPedido" class="nav-link">Nuevo pedido</a></li>
                 <li><a href="/EditarPedido" class="nav-link">Editar pedido</a></li>
               </ul>
             </nav>
@@ -79,24 +79,51 @@
   
      
     <div class="site-blocks-cover overlay" style="background-image: url(images/hero_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+    <div class="site-section bg-light" id="contact-section">
       <div class="container">
-        <div class="row align-items-center justify-content-center">
-
-          <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
-                        
-            <div class="row mb-4">
-              <div class="col-md-8">
-                <h1>Pedidos:</h1>
-                <p class="mb-5 lead">Todavía no hay pedidos que mostrar</p>
-                <div>
-                  <a href="/NuevoPedido.html" class="btn btn-white py-3 px-5 rounded-0 d-block d-sm-inline-block">Nuevo pedido</a>
-                  <a href="/EditarPedido" class="btn btn-white btn-outline-white py-3 px-5 rounded-0 mb-lg-0 mb-2 d-block d-sm-inline-block">Editar pedido</a>
-                </div>
-              </div>
-            </div>
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">¡Rellena aquí tu pedido!</h2>
           </div>
         </div>
+        <div class="row justify-content-center">
+          <div class="col-md-7 mb-5">
+
+            <form action="/GuardarPedido" class="p-5 bg-white">
+              
+              <h2 class="h4 text-black mb-5">Quiero:</h2> 
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Título del pedido:</label> 
+                  <input type="subject" id="subject" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Elemento</label> 
+                  <textarea name="message" id="message" cols="30" rows="2" class="form-control rounded-0" placeholder="Escribe aquí el elemento que quieres"></textarea>
+                </div>
+              </div>
+             
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Añadir elemento" class="btn btn-black rounded-0 py-3 px-4">
+                  <input type="submit" value="Guardar pedido" class="btn btn-black rounded-0 py-3 px-4">
+                </div>
+              </div>
+
+  
+            </form>
+          </div>
+        
+        </div>
+        
       </div>
+    </div>
     </div>  
 
 
