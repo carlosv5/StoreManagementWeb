@@ -102,16 +102,16 @@
               </div>
 
               <div class="row form-group">
-                <div class="col-md-12">
-                  <label class="text-black" for="message">Elemento</label> 
-                  <textarea name="element" id="message" cols="30" rows="2" class="form-control rounded-0" placeholder="Escribe aquí el elemento que quieres"></textarea>
+                <div class="col-md-12" id="textareas">
+                  <label class="text-black" for="message">Elemento 1</label> 
+                  <textarea name="element1" cols="30" rows="1" class="form-control rounded-0" placeholder="Escribe aquí el elemento que quieres"></textarea>
                 </div>
               </div>
              
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input value="Añadir elemento" class="btn btn-black rounded-0 py-3 px-4">
+                  <input value="Añadir elemento" onclick ="appendTextarea()" class="btn btn-black rounded-0 py-3 px-4">
                   <input type="submit" value="Guardar pedido" class="btn btn-black rounded-0 py-3 px-4">
                 </div>
               </div>
@@ -146,6 +146,7 @@
 
   
   <script src="js/main.js"></script>
+  <script src="scripts.js"></script>
     
   </body>
 </html>
