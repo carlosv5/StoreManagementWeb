@@ -97,14 +97,14 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Título del pedido:</label> 
-                  <input type="subject" name="title" id="subject" class="form-control rounded-0">
+                  <input type="subject" name="title" id="subject" class="form-control rounded-0 notEmpty">
                 </div>
               </div>
 
               <div class="row form-group">
                 <div class="col-md-12" id="textareas">
                   <label class="text-black" for="message">Elemento 1</label> 
-                  <textarea name="element1" cols="30" rows="1" class="form-control rounded-0" placeholder="Escribe aquí el elemento que quieres"></textarea>
+                  <textarea name="element1" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres"></textarea>
                 </div>
               </div>
              
@@ -112,7 +112,7 @@
               <div class="row form-group">
                 <div class="col-md-12">
                   <input value="Añadir elemento" onclick ="appendTextarea()" class="btn btn-black rounded-0 py-3 px-4">
-                  <input type="submit" value="Guardar pedido" class="btn btn-black rounded-0 py-3 px-4">
+                  	<input type="submit" id="sendNewButton" style="pointer-events: none;" value="Guardar pedido" class="btn btn-black rounded-0 py-3 px-4">
                 </div>
               </div>
 
