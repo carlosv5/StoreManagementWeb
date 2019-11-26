@@ -74,44 +74,8 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-3">¡Revisa tu pedido!</h2>
+            <h2 class="section-title mb-3">Pedido borrado correctamente</h2>
           </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-md-7 mb-5">
-
-            <form action="/editOrder" class="p-5 bg-white" method="get">
-              <input type = "hidden" name = "id" value = {{id}} />
-              <h2 class="h4 text-black mb-5">Pedido: {{title}}</h2> 
-			  <input type = "hidden" name = "title" value = {{title}} />
-
-                <div class="col-md-12">
-					<ol>
-					{{#elements}}
-                		<li>{{ . }}</li>
-                		<input type = "hidden" name ="element[]" value = {{ . }} />
-					{{/elements}}  
-					</ol>
-                </div>
-             
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" value="Editar pedido" class="btn btn-black rounded-0 py-3 px-4">
-                </div>
-              </div>
-
-  
-            </form>
-            <form action="/removeOrder" class="bg-white" method="post">
-              <input type = "hidden" name = "id" value = {{id}} />
-              <div class="row form-group">
-                <div class="col-md-12">
-                  <input type="submit" onclick="alert('¿Está seguro?')" value="Borrar pedido" class="btn btn-black rounded-0 py-3 px-4">
-                </div>
-              </div>
-            </form>
-          </div>
-        
         </div>
         
       </div>
