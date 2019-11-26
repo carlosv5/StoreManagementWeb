@@ -83,17 +83,17 @@
             <form action="/editOrder" class="p-5 bg-white" method="get">
               
               <h2 class="h4 text-black mb-5">Pedido: {{title}}</h2> 
-
+			  <input type = "hidden" name = "title" value = {{title}} />
 
                 <div class="col-md-12">
 					<ol>
 					{{#elements}}
                 		<li>{{ . }}</li>
+                		<input type = "hidden" name ="element[]" value = {{ . }} />
 					{{/elements}}  
 					</ol>
                 </div>
              
-
               <div class="row form-group">
                 <div class="col-md-12">
                   <input type="submit" value="Editar pedido" class="btn btn-black rounded-0 py-3 px-4">

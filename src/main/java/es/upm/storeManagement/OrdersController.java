@@ -50,11 +50,11 @@ public class OrdersController {
 	}
 	
 	@GetMapping("/editOrder")
-	public String showOrder(Model model, @RequestParam String title, @RequestParam String element) {
-		String[] elements = {element};
-		repository.save(new Order(title, elements));
+	public String showOrder(Model model, @RequestParam String title, @RequestParam(value="element[]") String[] elements) {
+		Order order = new Order(title, elements);
+		repository.save(order);
 		model.addAttribute("title", title);
-		model.addAttribute("element", element);
+		model.addAttribute("elements", elements);
 		
 		return "editOrder";
 	}
