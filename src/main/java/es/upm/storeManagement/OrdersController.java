@@ -1,5 +1,7 @@
 package es.upm.storeManagement;
 
+import java.util.Optional;
+
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +30,8 @@ public class OrdersController {
 	public String saveOrder(Model model, @RequestParam String title, @RequestParam(value="element[]") String[] elements) {
 		Order order = new Order(title, elements);
 		repository.save(order);
+		long id = repository.count();
+		model.addAttribute("id", id);
 		model.addAttribute("title", title);
 		model.addAttribute("elements", elements);
 		
@@ -43,6 +47,7 @@ public class OrdersController {
 	
 	@RequestMapping("/order/{id}")
 	public String showOrder(Model model, @PathVariable long id) {
+		model.addAttribute("id", id);
 		model.addAttribute("title", repository.findById(id).get().getTitle());
 		model.addAttribute("elements", repository.findById(id).get().getElement());
 		
@@ -50,9 +55,10 @@ public class OrdersController {
 	}
 	
 	@GetMapping("/editOrder")
-	public String showOrder(Model model, @RequestParam String title, @RequestParam(value="element[]") String[] elements) {
+	public String showOrder(Model model, @RequestParam long id, @RequestParam String title, @RequestParam(value="element[]") String[] elements) {
+		repository.deleteById(id);
 		Order order = new Order(title, elements);
-		repository.save(order);
+		//repository.save(order);
 		model.addAttribute("title", title);
 		model.addAttribute("elements", elements);
 		

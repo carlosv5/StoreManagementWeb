@@ -82,31 +82,36 @@
 
             <form action="saveOrder" class="p-5 bg-white" method="post">
               
-              <h2 class="h4 text-black mb-5">Quiero:</h2> 
+              <strong><h2 class="h4 text-black mb-5">Quiero:</h2> </strong>
               <div class="formFilled">   
               <div class="row form-group">             
                 <div class="col-md-12">
-                  <label class="text-black" for="subject">Título del pedido:</label> 
+                  <strong><label class="text-black" for="subject">Título del pedido:</label> </strong>
                   <input type="subject" name="title" id="subject" class="form-control rounded-0 notEmpty">
                 </div>
               </div>
-
-              <div class="row form-group">
-                <div class="col-md-12" id="textareas">
-                  <label class="text-black" for="message">Elemento 1</label> 
-                  <textarea name="element[]" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres"></textarea>
-                </div>
+              
+              <div class="row form-group">   
+				<div class="textareas col-md-12">
+                  <strong><label class="text-black" for="message">Elementos:</label> </strong>
+				    <span class="block">
+				    </span>
+				    <div class="block">
+				        <textarea type="text" name="element[]" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres"></textarea> <span class="remove">Borrar elemento</span>
+				    </div>
+				    <br class="block">
+				</div>                
               </div>
+              
+ 
               </div>         
              
-
               <div class="row form-group">
                 <div class="col-md-12 buttons">
-                  <input value="Añadir elemento" onclick ="appendTextarea()" class="btn btn-black rounded-0 py-3 px-4">
+                  <input value="Añadir elemento" class="btn btn-black rounded-0 py-3 px-4 add">
                   <input type="submit" id="sendNewButton"  value="Guardar pedido" class="btn btn-black rounded-0 py-3 px-4">
                 </div>
               </div>
-
   
             </form>
           </div>

@@ -17,6 +17,18 @@ public class Order {
 		this.titulo = titulo;
 		this.elementos = elementos;
 	}
+	public String getTitulo() {
+		return titulo;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public String[] getElementos() {
+		return elementos;
+	}
+	public void setElementos(String[] elementos) {
+		this.elementos = elementos;
+	}
 	public String getTitle() {
 		return titulo;
 	}
