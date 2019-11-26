@@ -2,7 +2,7 @@ var x=2
 function appendTextarea()
 {
 	var title = '<label class="text-black element' + x + '" for="message">Elemento ' + x + ' </label>'
-	var element = '<textarea name="element' + x + '" id="element' + x + '" cols="30" rows="1" class="form-control notEmpty rounded-0 element' + x + '" placeholder="Escribe aquí el elemento que quieres"></textarea>';
+	var element = '<textarea name="element[]" id="element' + x + '" cols="30" rows="1" class="form-control notEmpty rounded-0 element' + x + '" placeholder="Escribe aquí el elemento que quieres"></textarea>';
 	$('#textareas').append('<br class="element' + x + '">');
 	$('#textareas').append(title);
 	$('#textareas').append(element);

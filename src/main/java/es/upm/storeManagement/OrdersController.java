@@ -25,10 +25,9 @@ public class OrdersController {
 	 }
 
 	 @RequestMapping("/saveOrder")
-	public String saveOrder(Model model, @RequestParam String title, @RequestParam String element) {
-		//Order order = new Order(title, string[] {element})
-		String[] elements = {element};
-		repository.save(new Order(title, elements));
+	public String saveOrder(Model model, @RequestParam String title, @RequestParam(value="element[]") String[] elements) {
+		Order order = new Order(title, elements);
+		repository.save(order);
 		model.addAttribute("title", title);
 		model.addAttribute("elements", elements);
 		
