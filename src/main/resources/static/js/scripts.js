@@ -1,6 +1,6 @@
 
 $('.add').click(function() {
-    $('.block:last').before('<div class="block"><textarea type="text" name="element[]" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres"></textarea><span class="remove">Borrar elemento</span></div><br class="block">');
+    $('.block:last').before('<div class="block"><textarea type="text" name="element[]" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres"></textarea><span class="remove">Borrar elemento</span><br class="block"></div>');
     checkDisabled();
 });
 $('.textareas').on('click','.remove',function() {
