@@ -15,6 +15,10 @@ $('.formFilled').focusout(function(){
 
 function checkDisabled() {
 		    let empty = false;
+		    if($('.notEmpty').length == 1){
+		    	$('#sendNewButton').attr('disabled', 'disabled');
+		    	return false;
+		    }
 		    $('.notEmpty').each(function() {
 		      empty = $(this).val().length == 0;
 		      if(empty){

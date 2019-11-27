@@ -74,7 +74,7 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-3">¡Rellena aquí tu pedido!</h2>
+            <h2 class="section-title mb-3">Pedido borrado, ¡guarda después actualizarlo!</h2>
           </div>
         </div>
         <div class="row justify-content-center">
@@ -82,34 +82,41 @@
 
             <form action="/saveOrder" class="p-5 bg-white" method="post">
               
-              <h2 class="h4 text-black mb-5">Quiero:</h2> 
+              <h2 class="h4 text-black mb-5">Quiero:</h2>              
               <div class="formFilled">   
               <div class="row form-group">             
                 <div class="col-md-12">
-                  <label class="text-black" for="subject">Título del pedido:</label> 
-                  <input type="subject" name="title" id="subject" class="form-control rounded-0 notEmpty" value={{title}}>
+                  <strong><label class="text-black" for="subject">Título del pedido:</label> </strong>
+                  <input type="subject" name="title" id="subject" class="form-control rounded-0 notEmpty" value= "{{title}}">
                 </div>
               </div>
-
-              <div class="row form-group">
-					{{#elements}}
-		                <div class="col-md-12" id="textareas">
-		                  <label class="text-black" for="message">Elemento:</label> 
-		                  <textarea name="element[]" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres">{{ . }}</textarea>
-		                </div>
-					{{/elements}}  
+              
+              <div class="row form-group">   
+				<div class="textareas col-md-12">
+                  <strong><label class="text-black" for="message">Elementos:</label> </strong>
+                  	{{#elements}}
+				    <span class="block">
+				    </span>
+				    <div class="block">
+				        <textarea type="text" name="element[]" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres">{{ . }}</textarea> <span class="remove">Borrar elemento</span>
+				    </div>
+				    <br class="block">
+				    {{/elements}}
+				</div>                
               </div>
-              </div>         
+              
+ 
+              </div>                       
              
 
               <div class="row form-group">
                 <div class="col-md-12 buttons">
-                  <input value="Añadir elemento" onclick ="appendTextarea()" class="btn btn-black rounded-0 py-3 px-4">
-                  <input type="submit" id=""  value="Guardar pedido" class="btn btn-black rounded-0 py-3 px-4">
+                  <input value="Añadir elemento" class="btn btn-black rounded-0 py-3 px-4 add">
+                  <input type="submit" id="sendNewButton"  value="Guardar pedido" class="btn btn-black rounded-0 py-3 px-4">
                 </div>
               </div>
 
-  
+ 
             </form>
           </div>
         
@@ -136,6 +143,6 @@
   <script src="/js/jquery.fancybox.min.js"></script>
   <script src="/js/jquery.sticky.js"></script>
   <script src="/js/main.js"></script>
-  <script src="/scripts.js"></script>     
+  <script src="js/scripts.js"></script>     
   </body>
 </html>

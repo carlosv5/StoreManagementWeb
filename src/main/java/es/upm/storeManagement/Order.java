@@ -36,4 +36,8 @@ public class Order {
 	public String[] getElement() {
 		return elementos;
 	}
+	
+	public long getId() {
+		return id;
+	}
 }
