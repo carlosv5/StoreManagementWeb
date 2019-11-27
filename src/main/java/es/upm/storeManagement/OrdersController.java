@@ -57,12 +57,24 @@ public class OrdersController {
 	
 	@GetMapping("/editOrder")
 	public String showOrder(Model model, @RequestParam long id, @RequestParam String title, @RequestParam(value="element[]") String[] elements) {
-		repository.deleteById(id);
+		model.addAttribute("id", id);
 		model.addAttribute("title", title);
 		model.addAttribute("elements", elements);
-		System.out.println(title);
 		
 		return "editOrder";
+	}
+	
+	 @RequestMapping("/editAndSaveOrder")
+	public String editAndSaveOrder(Model model, @RequestParam long id, @RequestParam String title, @RequestParam(value="element[]") String[] elements) {		
+		Optional<Order> orderOpt = repository.findById(id);
+		Order order = orderOpt.get();
+		order.setTitulo(title);
+		order.setElementos(elements);
+		model.addAttribute("id", id);
+		model.addAttribute("title", title);
+		model.addAttribute("elements", elements);
+		
+		return "show_order";
 	}
 	
 	@PostMapping("/removeOrder")

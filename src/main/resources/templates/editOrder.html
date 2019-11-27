@@ -74,14 +74,14 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-12 text-center">
-            <h2 class="section-title mb-3">Pedido borrado, ¡guarda después actualizarlo!</h2>
+            <h2 class="section-title mb-3">¿Quieres actualizar tu pedido?</h2>
           </div>
         </div>
         <div class="row justify-content-center">
           <div class="col-md-7 mb-5">
 
-            <form action="/saveOrder" class="p-5 bg-white" method="post">
-              
+            <form action="/editAndSaveOrder" class="p-5 bg-white" method="post">
+              <input type = "hidden" name = "id" value = {{id}} />
               <h2 class="h4 text-black mb-5">Quiero:</h2>              
               <div class="formFilled">   
               <div class="row form-group">             
@@ -98,7 +98,7 @@
 				    <span class="block">
 				    </span>
 				    <div class="block">
-				        <textarea type="text" name="element[]" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres">{{ . }}</textarea> <span class="remove">Borrar elemento</span>
+				        <input class="boxes" type="checkbox" name="checkbox[]"><textarea type="text" name="element[]" cols="30" rows="1" class="form-control rounded-0 notEmpty" placeholder="Escribe aquí el elemento que quieres">{{ . }}</textarea> <span class="remove">Borrar elemento</span>
 				    </div>
 				    <br class="block">
 				    {{/elements}}
