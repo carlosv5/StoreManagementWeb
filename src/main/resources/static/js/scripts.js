@@ -30,3 +30,9 @@ function checkDisabled() {
 		    else
 		      $('#sendNewButton').attr('disabled', false);
 }
+
+$('.boxes').change(function(){
+    var c = this.checked ? 'line-through' : '';
+    this.nextSibling.style.textDecoration = c;
+
+});
