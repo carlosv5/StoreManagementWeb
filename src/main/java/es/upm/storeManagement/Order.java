@@ -1,5 +1,7 @@
 package es.upm.storeManagement;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,10 +14,17 @@ public class Order {
 	private long id;
 	private String titulo;
 	private String[] elementos;
+	private boolean[] checkbox;
 	public Order() {}
 	public Order(String titulo, String[] elementos) {
 		this.titulo = titulo;
 		this.elementos = elementos;
+	}
+	public boolean[] getCheckbox() {
+		return checkbox;
+	}
+	public void setCheckbox(boolean[] boxes) {
+		this.checkbox = boxes;
 	}
 	public String getTitulo() {
 		return titulo;

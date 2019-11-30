@@ -65,11 +65,12 @@ public class OrdersController {
 	}
 	
 	 @RequestMapping("/editAndSaveOrder")
-	public String editAndSaveOrder(Model model, @RequestParam long id, @RequestParam String title, @RequestParam(value="element[]") String[] elements) {		
+	public String editAndSaveOrder(Model model, @RequestParam long id, @RequestParam String title, @RequestParam(value="element[]") String[] elements, @RequestParam(value="checkbox[]") boolean[] boxes) {		
 		Optional<Order> orderOpt = repository.findById(id);
 		Order order = orderOpt.get();
 		order.setTitulo(title);
 		order.setElementos(elements);
+		order.setCheckbox(boxes);
 		model.addAttribute("id", id);
 		model.addAttribute("title", title);
 		model.addAttribute("elements", elements);
