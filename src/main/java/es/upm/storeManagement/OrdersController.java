@@ -50,7 +50,7 @@ public class OrdersController {
 	public String showOrder(Model model, @PathVariable long id) {
 		model.addAttribute("id", id);
 		model.addAttribute("title", repository.findById(id).get().getTitle());
-		model.addAttribute("elements", repository.findById(id).get().getElement());
+		model.addAttribute("elements", repository.findById(id).get().getElements());
 		
 		return "show_order";
 	}
@@ -65,16 +65,16 @@ public class OrdersController {
 	}
 	
 	 @RequestMapping("/editAndSaveOrder")
-	public String editAndSaveOrder(Model model, @RequestParam long id, @RequestParam String title, @RequestParam(value="element[]") String[] elements, @RequestParam(value="checkbox[]") boolean[] boxes) {		
+	public String editAndSaveOrder(Model model, @RequestParam long id, @RequestParam String title, @RequestParam(value="element[]") String[] elements, @RequestParam(value="checkbox[]", required = false) boolean[] boxes) {		
 		Optional<Order> orderOpt = repository.findById(id);
 		Order order = orderOpt.get();
-		order.setTitulo(title);
-		order.setElementos(elements);
+		order.setTitle(title);
+		order.setElements(elements);
 		order.setCheckbox(boxes);
 		model.addAttribute("id", id);
 		model.addAttribute("title", title);
 		model.addAttribute("elements", elements);
-		
+		System.out.println(boxes.length);
 		return "show_order";
 	}
 	

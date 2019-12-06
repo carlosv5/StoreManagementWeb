@@ -12,13 +12,18 @@ public class Order {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-	private String titulo;
-	private String[] elementos;
+	private String title;
+	private String[] elements;
 	private boolean[] checkbox;
 	public Order() {}
-	public Order(String titulo, String[] elementos) {
-		this.titulo = titulo;
-		this.elementos = elementos;
+	public Order(String title, String[] elements) {
+		this.title = title;
+		this.elements = elements;
+	}
+	public Order(String title, String[] elements, boolean[] checkbox) {
+		this.title = title;
+		this.elements = elements;
+		this.checkbox = checkbox;
 	}
 	public boolean[] getCheckbox() {
 		return checkbox;
@@ -26,24 +31,18 @@ public class Order {
 	public void setCheckbox(boolean[] boxes) {
 		this.checkbox = boxes;
 	}
-	public String getTitulo() {
-		return titulo;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-	public String[] getElementos() {
-		return elementos;
-	}
-	public void setElementos(String[] elementos) {
-		this.elementos = elementos;
+	public void setElements(String[] elements) {
+		this.elements = elements;
 	}
 	public String getTitle() {
-		return titulo;
+		return title;
 	}
 
-	public String[] getElement() {
-		return elementos;
+	public String[] getElements() {
+		return elements;
 	}
 	
 	public long getId() {
