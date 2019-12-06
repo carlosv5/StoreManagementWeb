@@ -74,7 +74,6 @@ public class OrdersController {
 		model.addAttribute("id", id);
 		model.addAttribute("title", title);
 		model.addAttribute("elements", elements);
-		System.out.println(boxes.length);
 		return "show_order";
 	}
 	
